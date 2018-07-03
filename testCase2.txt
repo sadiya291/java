@@ -1,0 +1,19 @@
+Nsbt01~Nsbt pvt Ltd~A-39,Noida~U.P.~201307~nsbt@nucleussoftware.com~9998065432~Chitralekha~N~A~13/Aug/2010~Nidhi~~~~
+Wipro01~Wipro pvt Ltd~A-12,Noida~U.P.~201307~wipro@gmail.com~9806543201~Naveen~N~A~13/Aug/2010~Rajeev~~~~
+Tcs01~Tcs pvt Ltd ~C-52,Mathura~U.P.~100445~tcs@hotmail.com~9980654321~Nitin~N~A~13/Aug/2010~Nishant~~~24/Aug/2010~Vaibhav
+Amity12~Amity pvt Ltd~22,Ghaziabad~U.P~144201~amity@rediffmail.com~9890202103~Vijay~N~A~13/Aug/2010~Gaurav~~~~
+Bharat11~Bharat Institute ltd~34,Noida~U.P~201307~bharat@gmail.com~9018900998~Gaurav~N~A~13/Aug/2010~Umesh~~~~
+Bhartividyapeeth01~Bhartividypeeth pvt Ltd~D-56,Noida~U.P~201307~bharti@yahoo.com~9899390448~Cheena~N~A~14/Aug/2010~Nishant~23/Aug/2010~Nikhil~~
+deva02~Sachdeva pvt ltd~200,Meerut~U.P~200111~Sachdeva02@gamil.com~9359920052~Devangi~N~A~14/Aug/2010~Anant~~~~
+P08~Purnika pvt Ltd~456,Mandi Dabwali Dist. Sirsa~Haryana~201408~Purnima08@rediffmail.com~9584110900~Vipul~N~A~14/Aug/2010~Rachit~~~~
+Accurate09~Accurate institute ltd~08,Ghaziabad~U.P~103405~Accurate09@yahoo.co.in~9891899963~Nikhil~N~A~14/Aug/2010~Shashank~~~~
+Techno10 ~Technocrats Institute ltd ~B-299,Ghaziabad~U.P~203450~Technocrats10@gmail.com~9901908963~Abhilash~N~A~14/Aug/2010~Shivam~~~~
+Ch13 ~Chitkara pvt. Ltd.~67,Chhindwara~M.P~144008~Chitkara13@yahoo.com~9944680081~Amit~N~A~15/Aug/2010~Rishu~~~25/Aug/2010~Shashank
+Narain14 ~Narain public ltd~89,Noida~U.P~201307~Narain14@hotmail.com~9811483888~Ajay~N~A~15/Aug/2010~Rohit~~~~
+Banarsi15~Banarsi das institute ltd~90,Karnal~Haryana~144010~das15@gmail.com~9482586393~Abhishek~N~A~15/Aug/2010~Deepak~~~~
+Bajaj16~Bajaj pvt ltd~27,Meerut~U.P~144011~Bajaj16@gamil.com~9999365332~Rahul~N~A~15/Aug/2010~Anuj~~~~
+Isha17~Krishna institute ltd~j-45,Lucknow~U.P~105001~Krishna17@yahoo.com~9060000492~Anchit~N~A~15/Aug/2010~Manish~~~~
+Charya18 ~Dronocharya pvt Ltd~35,Noida~U.P~201307~Dronocharya18@yahoo.com~9012265950~Kshitij~N~A~15/Aug/2010~Avtar~~~26/Aug/2010~Nitin
+Ad22~Advanced institute private limited~C-59Ghaziabad~U.P~105001~Advanced22@gmail.com~8099083299~Jagrati~N~A~15/Aug/2010~Gaurav~~~~
+Galgotia21~Galgotia pvt Ltd~Noida~U.P~201307~Galgotia21@yahoo.com~8010058095~Swapnil~N~A~15/Aug/2010~Arijit~~~~
+Bansal23~Bansal pvt Ltd~Kotkapura~Punjab~105551~bansal@gmail.com~9323301589~Kritika~N~A~15/Aug/2010~Ankita~26/Aug/2010~Sunil~24/Aug/2010~Vaibhav
