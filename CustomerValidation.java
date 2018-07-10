@@ -9,157 +9,173 @@ import java.util.regex.*;
 import com.nucleus.connection1.ConnectionSetup;
 
 public class CustomerValidation {
-	public boolean isValidRecord_Status(String Record_Status)
+	public boolean NULL(String str) {
+		if(str.equals(""))
+		{	System.out.println("=======>false-NULL is there.");
+			return false;
+		}
+		else
+		{	System.out.println("=======>true-not NULL");
+			return true;
+		}	
+}
+	//-----------------------------------------------------
+	
+	public boolean Primary_Key(String str,int size)
 	{
-		if(Record_Status!=null)
-		{
-			if(Record_Status.equals("N")||Record_Status.equals("M")||Record_Status.equals("D")||Record_Status.equals("A")||Record_Status.equals("R"))
+		if(str!=null)
 			{
+				if(str.length()<=size)
+				{
+					ConnectionSetup connectionSetup=new ConnectionSetup();
+					Connection con=connectionSetup.getConnection();
+					PreparedStatement pstmt;
+					try {
+						pstmt = con.prepareStatement("select * from SANDY_CUSTOMER_MASTER");
+						ResultSet rs=pstmt.executeQuery();
+						while(rs.next())
+							{
+								String input=rs.getString(2);
+								if(input.equals(str))
+								{		System.out.println("======>false-enter unique key");
+										return false;
+					
+								}
+							}
+							System.out.println("=====>true-verified primary key");
+							return true;
+						} catch (SQLException e) 
+								{
+										e.printStackTrace();
+								}		
+				}
+					System.out.println("=======>size is greater than required size");
+			
+			}
+				System.out.println("=======>false-string is null");
+				return false;
+	}
+	//------------------------------------------------------------------
+	public boolean Record_Status(String Status)
+	{
+		if(Status!=null)
+		{
+			if(Status.equals("N")||Status.equals("M")||Status.equals("D")||Status.equals("A")||Status.equals("R"))
+			{
+				System.out.println("=====>true-record status verified");
 				return true;
 			}
-		}	return false;
+		}	
+			System.out.println("======>false-enter valid character");
+			return false;
 	}
 	
 //----------------------------------------------------------------------------------------------------------	
 	
-	public boolean isValidActive_Inactive_Flag(String Active_Inactive_Flag )
+	public boolean String(String str,int size)
 	{
-		if(Active_Inactive_Flag!=null)
-		{
-			if(Active_Inactive_Flag.equals("A")||Active_Inactive_Flag.equals("I"))
+			if(str!=null)
 			{
-				return true;
-			}
-		} return false;
-	}
-	
-//-----------------------------------------------------------------------------------------------	
-	
-	public boolean isValid_String(String string,int size, boolean mandatory)
-	{
-		if(mandatory==true)
-		{
-			if(string!=null)
-			{
-				if(string.length()<=size)
+				if(str.length()<=size)
 					{ 
-						char[] chars=string.toCharArray();
-						for(char xyz:chars)
+						char[] characters=str.toCharArray();
+						for(char xyz:characters)
 						{
 							if((Character.isLetterOrDigit(xyz)))
 							{
-								String ch=Character.toString(xyz);
+								String x=Character.toString(xyz);
+								System.out.println("======>true-string verified");
 								return true;
 							}
+							System.out.println("======>false-enter valid string");
+							return false;
 						}
 				}
 		
-		}return false;
-	}
-	else 
-		if(mandatory==false)
-		{
-			if(string!=null)
-			{
-				if(string.length()<=size)
-					{
-					char[] chars=string.toCharArray();
-					for(char xyz:chars)
-					{
-						if((Character.isLetterOrDigit(xyz)))
-						{
-							String ch=Character.toString(xyz);
-						return true;
-					}return false;
-					
 			}
-		}
-		}
-		
-	}return true;
+				System.out.println("=====>Enter required string");
+				return false;
 	}
 	
-//-----------------------------------------------------------------------------------------	
+
 	
-	public boolean isValid_String(String string,int size)
-	{
-			if(string!=null)
-			{
-				if(string.length()<=size)
-					{ 
-						char[] chars=string.toCharArray();
-						for(char xyz:chars)
-						{
-							if((Character.isLetterOrDigit(xyz)))
-							{
-								String ch=Character.toString(xyz);
-								return true;
-							}return false;
-						}
-				}
-		
-		}return true;
-	}
 	//----------------------------------------------------------------------------------------------
-	public boolean isValidContact_Number(long num,int size)
+	public boolean Contact_Number(long num,int size)
 	{
-		String mno=String.valueOf(num);
-		if(mno!=null)
+		String number=String.valueOf(num);
+		if(number!=null)
 		{
-			if(mno.length()<=size)
-				{	char[]charss=mno.toCharArray();
-					for(char xyz:charss)
+			if(number.length()<=size)
+				{	char[]characters=number.toCharArray();
+					for(char xyz:characters)
+					{
+						if((Character.isDigit(xyz)))
+						{
+							String x=Character.toString(xyz);
+							System.out.println("======>true-Number verified");
+							return true;
+						}
+						System.out.println("======>false-enter valid number");
+						return false;
+					}
+				}
+		}
+		System.out.println("======>false-Enter required number");
+		return false;
+	}	
+	//--------------------------------------------------------------------------
+public boolean Customer_Pincode(long num,int size)
+{
+	String PIN=String.valueOf(num);
+	if(PIN!=null)
+	{
+		if(PIN.length()<=size)
+			{	char[]characters=PIN.toCharArray();
+				for(char xyz:characters)
 				{
 					if((Character.isDigit(xyz)))
 					{
-						String ch=Character.toString(xyz);
+						String x=Character.toString(xyz);
+						System.out.println("======>true-pincode verified");
 						return true;
-					}return false;
+					}
+					System.out.println("======>false-enter valid string");
+					return false;
 				}
 			}
-		}return false;
-		}	
-	//--------------------------------------------------------------------------
-public boolean isValidCustomer_Pincode(long num,int size)
-{
-	String mob=String.valueOf(num);
-	if(mob!=null)
-	{
-		if(mob.length()<=size)
-			{	char[]charss=mob.toCharArray();
-				for(char xyz:charss)
-			{
-				if((Character.isDigit(xyz)))
-				{
-					String ch=Character.toString(xyz);
-					return true;
-				}return false;
-			}
-		}
-	}return false;
+	}
+	System.out.println("=====>false-Please enter a valid pincode");
+	return false;
 	}	
 	//------------------------------------------------------------------------
 
-	public boolean isValidFileFormat(String strg)
+	public boolean FileFormat(String strg)
 	{
-	if(strg.contains(".txt"))
-		{ return true;
+		if(strg.contains(".txt"))
+			{ 
+			System.out.println("=====>true");
+			return true;
 	
-		}
-		return false;
+			}
+			System.out.println("======>false");
+			return false;
 		
 	}
 	
 	//-----------------------------------------------------------
-	public boolean isValidDate(String date)
+	public boolean Date(String date)
 	{
 		if(date!=null)
-		{return true;
-		}return false;
+		{	System.out.println("======>true-date is verified");
+			return true;
+		}
+		System.out.println("======>false-enter a valid date");
+		return false;
 		
 	}
 //----------------------------------------------
-	public boolean isValidEmail_Address(String email, int size) {
+	public boolean Email_Address(String email, int size) 
+{
 		String emailRegex="^[a-zA-Z0-9_+&*-]+(?:\\." + "[a-zA-Z0-9_+&*-]+)*@"
 				+"(?:[a-zA-Z0-9-]+\\.)+[a-z" + "A-Z]{2,7}$";
 					
@@ -168,82 +184,106 @@ public boolean isValidCustomer_Pincode(long num,int size)
 						if(email.length()<=size)
 						{
 						if(String.valueOf(email).matches(emailRegex))
-						{
-							return true;
-						} 
+							{	
+								System.out.println("======>true-email verified");
+								return true;
+							} 
+						System.out.println("=====>false-please enter a valid email");
 						return false;
-					}
+						}
 						
-	}return false;
+					}
+					System.out.println("false-email required");
+					return false;
 	
-		}
+		
+	
+}
 	
 	//---------------------------------------------------------------
-	public boolean isPrimary_Key(String string,int size)
+	public boolean Active_Inactive_Flag(String Flag )
 	{
-		if(string!=null)
-			{
-			if(string.length()<=size)
-			{
-				ConnectionSetup connectionSetup=new ConnectionSetup();
-				Connection con=connectionSetup.getConnection();
-				PreparedStatement pstmt;
-				try {
-					pstmt = con.prepareStatement("select * from SANDY_CUSTOMER_MASTER");
-				
-				ResultSet rs=pstmt.executeQuery();
-				while(rs.next())
-				{
-					String user=rs.getString(2);
-					if(user.equals(string))
-					{	return false;
-					
-					}
-				}return true;
-				} catch (SQLException e) 
-				{
-					
-				
-					e.printStackTrace();
-				}
+		if(Flag!=null)
+		{
+			if(Flag.equals("A")||Flag.equals("I"))
+			{	
+				System.out.println("=====>true-active-inactive flag verified");
+				return true;
 			}
-			
-		}return false;
-	}
-	//--------------------------------------------------------------------------
-/*public boolean notNULL(String s)
-	{
-		if(s.equals(""))
-		{	return false;
 		}
-		else
-			return true;
-	}*/
+		System.out.println("=====>false-enter a valid flag");
+		return false;
+	}
+	
 //--------------------------------------------------------------------------
 	
 		public boolean CustomerNameValid(String CustomerName)
 		{
-			char[] c=CustomerName.toCharArray();
-			int l=c.length;
-			for(char ch: c)
+			char[] xyz=CustomerName.toCharArray();
+			int l=xyz.length;
+			for(char ch: xyz)
 				if(!Character.isLetterOrDigit(ch))
-				{
-					String c1=Character.toString(ch);
-					if(!c1.equals(" "))
-						return false;
-				}return true;
-			}
+				{	
+					return false;
+				}
+			System.out.println("=====>true nameeeeeeeeee");
+			return true;
+		}	
 //---------------------------------------------------------
-		public boolean ValidateNUL(String s) {
-			if(s.equals(""))
+		public boolean String(String str,int size, boolean notnull)
+		{
+			if(notnull==true)
 			{
+				if(str!=null)
+				{
+					if(str.length()<=size)
+						{ 
+							char[] characters=str.toCharArray();
+							for(char xyz:characters)
+							{
+								if((Character.isLetterOrDigit(xyz)))
+								{
+									String x=Character.toString(xyz);
+									
+									System.out.println("======>true-string verified");
+									return true;
+								}
+							}
+						}
+			
+				}	
 				
-			return false;
+				System.out.println("=====>false-enter a valid string");
+				return false;
 			}
-			else
-				return true;
-}
+		else 
+			if(notnull==false)
+			{
+				if(str!=null)
+				{
+					if(str.length()<=size)
+						{
+							char[] characters=str.toCharArray();
+							for(char xyz:characters)
+							{
+								if((Character.isLetterOrDigit(xyz)))
+								{
+									String x=Character.toString(xyz);
+									System.out.println("======>true-string verified");
+									return true;
+								}
+								System.out.println("======>false enter a valid string");
+								return false;
+						
+							}
+						}
+				}
+			
+			}
+				System.out.println("=======>false-enter a valid string");
+				return false;
+		}
+		
 }
 	
 
-	

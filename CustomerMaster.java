@@ -1,7 +1,6 @@
 package com.nucleus.domain;
 
-
- public class CustomerMaster {
+public class CustomerMaster {
 	
 	private int Customer_ID;
 	private String Customer_Code;
