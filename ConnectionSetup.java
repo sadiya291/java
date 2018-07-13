@@ -1,11 +1,8 @@
 package com.nucleus.connection1;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
-//import java.sql.PreparedStatement;
-//import java.sql.ResultSet;
 import java.sql.SQLException;
-
+ 
 public class ConnectionSetup 
 {
 	Connection con;
@@ -13,32 +10,37 @@ public class ConnectionSetup
 	{
 		
 		try {
-	Class.forName("oracle.jdbc.driver.OracleDriver");         //connecting to the driver
-	con=DriverManager.getConnection("jdbc:oracle:thin:@10.1.50.198:1521:orcl","sh","sh");  //conncting to oracle
+				Class.forName("oracle.jdbc.driver.OracleDriver");  //connecting to driver
+				con=DriverManager.getConnection("jdbc:oracle:thin:@10.1.50.198:1521:orcl","sh","sh");  //conneting to oracle
 		
-	}
-		catch (ClassNotFoundException e) {
+			}
+				catch (ClassNotFoundException e) 
+				{
 			
-			e.printStackTrace();
-		}
-	catch (SQLException e) {
+					e.printStackTrace();
+				}
+				catch (SQLException e) {
 			
-			e.printStackTrace();
-		}
-		return con;
+					e.printStackTrace();
+				}
+					return con;
 	
 	}
 
-	public void closeConnection()
-	{
-	try {
-		con.close();
-	} catch (SQLException e) {
+		public void closeConnection()
+		{
+			try {
+				con.close();
+				} 	
+					catch (SQLException e) 
+					{
 		
-		e.printStackTrace();
-	}	
-	}
+						e.printStackTrace();
+					}	
+		}
 	
 	
 
 }
+
+
